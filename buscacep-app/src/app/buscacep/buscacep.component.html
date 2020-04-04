@@ -1,0 +1,55 @@
+  
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>
+        <h1> Buscar Cep</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+  <div class="example-container"> 
+      <form [formGroup]="cepForm" (ngSubmit)="onSubmit()">
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>CEP:</mat-label>
+          <input matInput placeholder="Informe o Cep :" formControlName="cep" name="cep" [(ngModel)]="endereco.cep">
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>UF:</mat-label>
+          <input matInput formControlName="uf" name="uf" [(ngModel)]="endereco.uf" readonly> 
+        </mat-form-field><br>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Localidade:</mat-label>
+          <input matInput formControlName="localidade" name="localidade" [(ngModel)]="endereco.localidade" readonly>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Bairro:</mat-label>
+          <input matInput formControlName="bairro" name="bairro" [(ngModel)]="endereco.bairro" readonly>
+        </mat-form-field><br>
+        
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Logradouro:</mat-label>
+          <input matInput formControlName="logradouro" name="logradouro" [(ngModel)]="endereco.logradouro" readonly>         
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Complemento:</mat-label>
+          <input matInput formControlName="complemento" name="complemento" [(ngModel)]="endereco.complemento" readonly>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Ibge:</mat-label>
+          <input matInput formControlName="ibge" name="ibge" [(ngModel)]="endereco.ibge" readonly>
+        </mat-form-field><br>
+        
+      </form>
+    </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button [routerLink]="['/']" (click)="buscar()" color="primary" type="button">Buscar</button>
+      <button mat-raised-button [routerLink]="['/']" (click)="cancelar()" type="button">Cancelar</button>
+    </mat-card-actions>
+  </mat-card>
