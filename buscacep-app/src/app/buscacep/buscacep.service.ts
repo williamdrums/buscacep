@@ -25,7 +25,8 @@ export class BuscaCepService {
 
         this.http.get(this.url + 'getcep/' + endereco.cep).subscribe(data => {
 
-            this.dadosCep.emit(data);
+            const erro = this.dadosCep.emit(data);
+            console.log(data);
 
         });
     }
